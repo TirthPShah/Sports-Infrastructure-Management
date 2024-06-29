@@ -12,3 +12,6 @@ def register(request):
 
 def aboutus(request):
     return render(request, 'aboutus.html')
+
+def profile(request):
+    return render(request, 'profile.html')
