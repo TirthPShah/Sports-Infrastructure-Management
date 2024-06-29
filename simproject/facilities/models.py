@@ -14,7 +14,6 @@ class Facility(models.Model):
     email = models.EmailField(max_length=100)
     website = models.URLField(max_length=100, null=True, blank=True)
     location_url = models.URLField(max_length=200, null=True, blank=True)
-    logo = models.ImageField(upload_to='facility_logos/', blank=True, null=True)
     facility_manager = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def clean(self):
