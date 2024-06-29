@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function sendOTP(email) {
+            // Placeholder function to send OTP
+            // Implement the backend call to send OTP here
+            // Example: await fetch('/send-otp', { method: 'POST', body: JSON.stringify({ email }) });
+            console.log('OTP sent to ' + email);
+            alert('OTP has been sent to your email.');
+        }
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+
+            // Send OTP to email
+            await sendOTP(email);
+
+            // Proceed with form submission or further steps
+            alert('Registration form submitted.');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-family-karla h-screen flex items-center justify-center">
+    <div class="bg-white w-full max-w-2xl mx-4 p-8 rounded-lg shadow-lg flex flex-col items-center bg-blue-50">
+        <!-- Register Section -->
+        <div class="w-full flex flex-col items-center">
+            <div class="flex justify-center pt-4">
+                <a href="#" class="text-white font-bold text-xl p-4">
+                    <img src="./Target[1].png" alt="Logo" class="h-24">
+                </a>
+            </div>
+            <div class="text-center pt-2">
+                <p class="text-3xl font-semibold">SPORTEASE</p>
+            </div>
+
+            <div class="flex flex-col justify-center my-auto pt-4 w-full px-8 lg:px-20">
+                <p class="text-center text-3xl font-semibold mb-6">Join Us.</p>
+                <form class="flex flex-col pt-3" onsubmit="handleSubmit(event);">
+                    <div class="flex flex-col pt-4">
+                        <label for="name" class="text-lg">Name<sup style="color:red">*</sup></label>
+                        <input type="text" required id="name" placeholder="John Smith" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                        <div id="name-help" class="form-text text-red-600">Name is required.</div>
+                    </div>
+
+                    <div class="flex flex-col pt-4">
+                        <label for="email" class="text-lg">Email<sup style="color:red">*</sup></label>
+                        <input type="email" required id="email" placeholder="your@email.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                        <div id="email-help" class="form-text text-red-600">Email is required.</div>
+                    </div>
+
+                    <div class="flex flex-col pt-4">
+                        <label for="phone" class="text-lg">Phone no.<sup style="color:red">*</sup></label>
+                        <input type="text" required id="phone" placeholder="123-456-7890" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                        <div id="phone-help" class="form-text text-red-600">Phone number is required.</div>
+                    </div>
+
+                    <div class="flex flex-col pt-4">
+                        <label for="password" class="text-lg">Password<sup style="color:red">*</sup></label>
+                        <input type="password" required id="password" placeholder="Password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                        <div id="password-help" class="form-text text-red-600">Password is required.</div>
+                    </div>
+
+                    <div class="flex flex-col pt-4">
+                        <label for="confirm-password" class="text-lg">Confirm Password<sup style="color:red">*</sup></label>
+                        <input type="password" required id="confirm-password" placeholder="Password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                        <div id="confirm-password-help" class="form-text text-red-600">Confirm Password is required.</div>
+                    </div>
+
+                    <input type="submit" value="Register" class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" />
+                </form>
+                
+                <div class="text-center pt-12 pb-4">
+                    <p>Already have an account? <a href="" class="underline font-semibold">Log in here.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
