@@ -18,7 +18,7 @@ class MembershipType(models.Model):
     price = models.IntegerField(max_length=10, blank=False, null=False)
 
     def __str__(self):
-        return self.name
+        return self.type
 
 class User(BaseProfile):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -38,10 +38,21 @@ class User(BaseProfile):
 class Admin(BaseProfile):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
-    
+
     def __str__(self):
         return self.name
 
     class Meta:
         verbose_name = 'Admin'
         verbose_name_plural = 'Admins'
+
+class FacilityManager(BaseProfile):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Facility Manager'
+        verbose_name_plural = 'Facility Managers'
