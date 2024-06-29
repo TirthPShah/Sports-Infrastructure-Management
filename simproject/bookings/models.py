@@ -8,11 +8,13 @@ from users.models import User
 
 # Create your models here.
 
-class Status(models.Model):
-    status = models.CharField(max_length=100)
+# bookings/models.py
 
-    def __str__(self):
-        return self.status
+class Status(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    
+    status = models.CharField(max_length=100)
+    # Other fields...
 
 class Booking(models.Model):
     uid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

@@ -3,6 +3,12 @@ from __future__ import unicode_literals
 
 from django.apps import AppConfig
 
+# bookings/apps.py
+
+from django.apps import AppConfig
 
 class BookingsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
     name = 'bookings'
+
+

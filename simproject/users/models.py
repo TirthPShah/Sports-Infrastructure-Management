@@ -7,11 +7,17 @@ from django.db import models
 
 # Create your models here.
 
+# users/models.py
+
 class Role(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    
     role = models.CharField(max_length=100)
 
     def __str__(self):
         return self.role
+    # Other fields...
+
 
 class User(BaseProfile):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
