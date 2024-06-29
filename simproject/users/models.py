@@ -19,6 +19,7 @@ class User(BaseProfile):
     is_active = models.BooleanField(default=True)
     membership_start_date = models.DateField(blank=True, null=True)
     membership_end_date = models.DateField(blank=True, null=True)
+    password = models.CharField(max_length=100, default='testing_password')
 
     def __str__(self):
         return self.name
@@ -26,4 +27,3 @@ class User(BaseProfile):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
-
